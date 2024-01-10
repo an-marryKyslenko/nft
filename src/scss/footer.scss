@@ -1,0 +1,132 @@
+//====================================================================================================
+.footer {
+	position: relative;
+	&::after{
+		content:'';
+		position: absolute;
+		left: 0%;
+		top: 10%;
+		width: 20%;
+		height: 15%;
+		background: #D53D5C;;
+		filter: blur(225px);
+	}
+
+
+	&__container {
+		display: flex;
+		padding: 75px 10px; 
+		justify-content: space-between;
+		@media (max-width:$tablet){
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 40px;
+			padding: 35px 10px 10px;
+		}
+	}
+
+	&__column {
+		flex: 0 1 50%;
+		display: flex;
+		gap:50px;
+		@media (max-width:$tablet){
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__column-menu{
+		flex: 0 1 50%;
+		display: flex;
+		justify-content: space-around;
+		@media (max-width:$tablet){
+			gap: 60px;
+		}
+	}
+
+	&__logo {
+		width: 200px;
+		height: 200px;
+		img{
+			min-width: 100%;
+		}
+		@media (max-width:$mobile){
+			width: 120px;
+			height: 120px; 
+		}
+	}
+
+	&__content {
+		color: #96839B;
+		font-size: 20px;
+		line-height: math.div(36,20);
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		max-width: 390px;
+		@media (max-width:$tablet){
+			max-width: 100%;
+		}
+	}
+	&__text{
+		@media (max-width:$tablet){
+			text-align: center;
+		}
+	}
+
+
+	&__links {
+		display: flex;
+		gap: 35px;
+		@media (max-width:$tablet){
+			align-self: center;
+		}
+	}
+	&__glink{
+		font-size: 26px;
+		color: #D53D5C;
+		transition: color 0.4s;
+		&:hover{
+			color: $mainColor;
+		}
+		
+	}
+
+	&__link {
+		font-size: 20px;
+		line-height: math.div(36,20);
+		color: #96839B;
+		transition: color 0.4s;
+		&:hover{
+			color: #D53D5C;;
+		}
+		@media (max-width:$mobile){
+			 font-size: 18px; 
+		}
+	}
+
+	&__copy {
+		@media (max-width:$tablet){
+			align-self: center;
+		}
+	}
+
+	&__menu {
+		
+	}
+
+	&__subtitle {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 35px;
+		margin-bottom: 18px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap:18px;
+	}
+}
+
+//====================================================================================================

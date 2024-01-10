@@ -1,0 +1,125 @@
+.collections {
+	position: relative;
+	&::before{
+			content:'';
+			position: absolute;
+			left: 20%;
+			top: 10%;
+			width: 10%;
+			height: 15%;
+			background: #60E7CE;
+			filter: blur(225px);
+		}
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px 15px;
+		position: relative;
+		
+		@media (max-width:$mobile){
+			 padding: 40px 15px; 
+		}
+	}
+
+	&__title {
+		&::before{
+			background: #E03054;
+		}
+		@media (min-width:$tablet){
+			left: -120%;
+			transition: left 2s ease-out 0s;
+			&::before{
+				transition: all 4s linear 2.5s;
+				left: -150%;
+			}
+		}
+		
+	}
+
+	&__slider {
+		min-width: 100%;
+		margin-bottom: 45px;
+		position: relative;
+		@media (min-width:$tablet){
+			transition: right 2s;
+			right: -200%;
+		}
+		@media (max-width: $mobile){
+			max-width: 100%;
+			padding: 0 15px;
+		}
+	}
+
+	&__wrapper {
+		
+		@media (max-width:$mobile){
+			display: flex;
+			flex-direction: column;
+			gap:25px;
+			align-items: center;
+			justify-content: center;
+
+			
+		}
+	}
+
+	&__slide {
+		max-width: 520px !important;
+		padding-bottom: 0;
+		@media (max-width: $mobile){
+			max-width: 100%;
+		}
+		.nft-card__names{
+			justify-content: center;
+			font-size: 32px;
+			line-height: 36px;
+		}
+		.nft-card__avatar{
+			width: 64px;
+			height: 64px;
+		}
+		.nft-card__img{
+			padding-bottom: 59.7%;
+		}
+		.nft-card__likes{
+			font-size: 20px;
+			font-weight: 600;
+		}
+		
+	}
+	&__pogination{
+		position: absolute;
+		left: 0;
+		top: 40%;
+		width: 100%;
+		height: 100px;
+		z-index: 20;
+		display: flex;
+		justify-content: space-between;
+		.swiper-button-disabled{
+			opacity: 0;
+		}
+		@media (max-width:$mobile){
+			 display: none; 
+		}
+	}
+	&__prev,&__next{
+		font-size: 72px;
+	}
+	&__prev{
+		transform: rotate(180deg);
+	}
+}
+@media (min-width:$tablet){
+	._watcher-view .collections__slider{
+		right: 0;
+	}
+	._watcher-view .collections__title{
+		left: 0;
+	}
+	._watcher-view .collections__title::before{
+		left: 0;
+		animation: ball 2.5s linear forwards ;
+	}
+}

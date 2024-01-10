@@ -1,0 +1,32 @@
+.brends {
+
+	&__container {
+		margin-bottom: 70px;
+		@include adaptiveValue("margin-bottom", 80, 30);
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 50px;
+
+		@media (max-width:$mobile){
+			flex-direction: column;
+			gap: 25px;
+		}
+	}
+	&__img {
+		display: inline-block;
+		transition: all 0.4s;
+
+		img{
+			max-width: 100%;
+			object-position: center;
+		}
+		&:hover{
+			transform: translate(0, -15px);
+		}
+		@media (max-width:$mobile){
+			width: 40%;
+		}
+	}
+}

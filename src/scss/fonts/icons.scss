@@ -1,0 +1,51 @@
+%ic {
+	font-family: "icomoon";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+		color: inherit;
+	}
+}
+.icon-twiter:before {
+	content: "\e900";
+}
+.icon-youtub:before {
+	content: "\e901";
+}
+.icon-arrow:before {
+	content: "\e902";
+	color: #d2cece;
+}
+.icon-arrow-roll:before {
+	content: "\e903";
+}
+.icon-fb:before {
+	content: "\e904";
+}
+.icon-g:before {
+	content: "\e905";
+}
+.icon-Group:before {
+	content: "\e906";
+	color: #908294;
+}
+.icon-hart:before {
+	content: "\e907";
+}
+.icon-wallet:before {
+	content: "\e908";
+	color: #908294;
+}
+
+.icon-heart-solid:before {
+	content: "\1f31d";
+ }

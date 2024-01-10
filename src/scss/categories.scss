@@ -1,0 +1,132 @@
+
+.categories {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		padding:60px 0px;
+		position: relative;
+		&::before{
+			content:'';
+			position: absolute;
+			left: 10%;
+			top: 10%;
+			width: 20%;
+			height: 20%;
+			background: #D53D5C;
+			filter: blur(225px);
+		}
+		@media (max-width:$mobile){
+			padding: 45px 15px; 
+		}
+	}
+
+	&__title {
+		align-self: center;
+		&::before{
+			background: #8613A5;
+		}
+		@media (min-width:$tablet){
+			left: -120%;
+			transition: left 2s ease-out 0s;
+			&::before{
+				transition: all 4s linear 2.5s;
+				left: -200%;
+			}
+		}
+		@media (max-width: 500px){
+			&::before{
+				width: 60px;
+				height: 60px;
+			}
+		}
+	}
+
+	&__slider {
+		min-width: 100%;
+		margin-bottom: 60px;
+		position: relative;
+		
+		@media (min-width:$tablet){
+			transition: right 2s;
+			right: -200%;
+		}
+		@media (max-width: $mobile){
+			max-width: 100%;
+			padding: 0 15px;
+		}
+	}
+
+	&__wrapper {
+		@media (max-width:$mobile){
+			display: flex;
+			flex-direction: column;
+			gap:25px;
+			align-items: center;
+			justify-content: center;
+
+			
+		}
+	}
+
+	&__slide {
+		max-width: 415px !important;
+		padding-bottom: 0;
+		position: relative;
+	@media (max-width: $mobile){
+			max-width: 100%;
+		}
+		.nft-card__img{
+			padding-bottom: 87%;
+			
+			img{
+				height: 100%;
+			}
+			&::after{
+				content:'';
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				position: absolute;
+				background: rgba(0, 0, 0, 0);
+				transition: all  0.5s ease 0s;
+			}
+		}
+		.nft-card__button{
+			width: 250px;
+			position: absolute;
+			z-index: 10;
+			top: 40%;
+			left: 15%;
+			opacity: 0;
+			background: $linkColor;
+			transition: all 0.5s ease 0s;
+		}
+		&:hover{
+			
+			.nft-card__img{
+				&::after{
+					background: rgba(0, 0, 0, 0.65);
+				}
+			}
+			.nft-card__button{
+				opacity: 1;
+			}
+		}
+		
+	}
+	&__button{
+		align-self: center;
+	}
+}
+@media (min-width:$tablet){
+	._watcher-view .categories__slider{
+		right: 0;
+	}
+	._watcher-view .categories__title{
+		left: 0;
+	}
+	._watcher-view .categories__title::before{
+		animation: ball 2.5s linear forwards ;
+	}
+}
